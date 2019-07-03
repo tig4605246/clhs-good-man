@@ -5,6 +5,13 @@
   "main": "mybot.js",
   "dependencies": {
     "discord.js": "^11.5.1"
+  }, 
+  "engines": {
+
+    "node": "10.x",
+
+    "npm": "*"
+
   },
   "devDependencies": {},
   "scripts": {
