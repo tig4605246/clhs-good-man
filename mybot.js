@@ -1,5 +1,6 @@
 // Extract the required classes from the discord.js module
 const Discord = require('discord.js');
+const request = require('request');
 const client = new Discord.Client();
 
 client.on("ready", () => {
@@ -93,9 +94,10 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 client.on("message", (message) => {
   if (message.content.startsWith("今天要玩啥")) {
     message.channel.send(`${message.author}`+" 來啦看看這個");
-
-    const attachment = new Discord.Attachment("http://store.steampowered.com/explore/random/");
-    message.channel.send(attachment)
+    var r = request(url, function (e, response) {
+      if (!response.request.uri) return;
+      message.channel.send(response.request.uri)
+    })
   }
 });
 
