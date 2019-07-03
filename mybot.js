@@ -9,15 +9,12 @@ client.on("message", (message) => {
   if (message.content.startsWith("ping")) {
     message.channel.send("pong!");
   }
-  if (message.content.startsWith("神經病")) {
-    message.channel.send("什麼鬼套路");
-  }
 });
 
 client.on("message", (message) => {
-    if (message.content.startsWith("神經病")) {
-      message.channel.send("什麼鬼套路");
-    }
+  if (message.content.startsWith("神經病")) {
+    message.channel.send("什麼鬼套路");
+  }
 });
 
 client.on("message", (message) => {
