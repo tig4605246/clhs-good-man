@@ -94,7 +94,8 @@ client.on("message", (message) => {
   if (message.content.startsWith("今天要玩啥")) {
     message.channel.send(`${message.author}`+" 來啦看看這個");
 
-    message.channel.send("http://store.steampowered.com/explore/random/");
+    const attachment = new Discord.Attachment("http://store.steampowered.com/explore/random/");
+    message.channel.send(attachment)
   }
 });
 
