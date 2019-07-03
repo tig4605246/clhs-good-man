@@ -26,7 +26,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
   if (message.content.startsWith("CLHS")) {
     // Create the attachment using MessageAttachment
-		const attachment = new MessageAttachment('https://imgur.com/CqTXdVF');
+		const attachment = new MessageAttachment('https://i.imgur.com/CqTXdVF.png');
 		// Send the attachment in the message channel
 		message.channel.send(attachment);
   }
