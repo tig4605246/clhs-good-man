@@ -2,10 +2,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
 client.on("ready", () => {
   console.log("I am ready!");
 });
@@ -98,7 +94,7 @@ client.on("message", (message) => {
   if (message.content.startsWith("今天要玩啥")) {
     message.channel.send(`${message.author}`+" 來啦看看這個");
 
-    message.channel.send("https://store.steampowered.com/app/"+getRandomInt(40000).toString());
+    message.channel.send("http://store.steampowered.com/explore/random/");
   }
 });
 
