@@ -22,5 +22,21 @@ client.on("message", (message) => {
       message.channel.send("垃圾雞舍");
     }
 });
+
+client.on("message", (message) => {
+  if (message.content.startsWith("CLHS")) {
+    // Create the attachment using MessageAttachment
+		const attachment = new MessageAttachment('https://imgur.com/CqTXdVF');
+		// Send the attachment in the message channel
+		message.channel.send(attachment);
+  }
+});
+
+client.on("message", (message) => {
+  if (message.content.includes("Grim Dawn")) {
+    message.channel.send("來啦現在夏季特賣只要NTD 172 !!");
+    message.channel.send("https://store.steampowered.com/app/219990/Grim_Dawn/");
+  }
+});
  
 client.login(process.env.BOT_KEY);
