@@ -1,1 +1,1 @@
-worker: npm start
+worker: nodejs mybot.js
