@@ -92,11 +92,12 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 })
 
 client.on("message", (message) => {
-  if (message.content.startsWith("今天要玩啥")) {
+  if (message.content.startsWith("今天要玩啥")||message.content.startsWith("有啥好玩")) {
     message.channel.send(`${message.author}`+" 來啦看看這個");
-    var r = request(url, function (e, response) {
-      if (!response.request.uri) return;
-      message.channel.send(response.request.uri)
+    var r = request.get("http://store.steampowered.com/explore/random/", function (err, res, body) {
+      console.log(r.uri.href);
+      //console.log(res.request.uri.href);
+      message.channel.send(r.uri.href)
     })
   }
 });
