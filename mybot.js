@@ -3,6 +3,10 @@ const Discord = require('discord.js');
 const request = require('request');
 const client = new Discord.Client();
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 client.on("ready", () => {
   console.log("I am ready!");
 });
