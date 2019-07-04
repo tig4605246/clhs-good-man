@@ -102,4 +102,35 @@ client.on("message", (message) => {
   }
 });
 
+client.on("message", (message) => {
+  if (message.content.startsWith("找老婆")) {
+    message.channel.send(`${message.author}`+" 今日你的老婆是");
+
+    message.channel.send("https://www.animecharactersdatabase.com/characters.php?id=" + getRandomInt(95000).toString())
+  }
+});
+
+client.on("message", (message) => {
+  if (message.content.startsWith("看報紙")||message.content.startsWith("看新聞")) {
+    message.channel.send(`${message.author}`+" 今日新聞懶人包：");
+    var url = 'https://newsapi.org/v2/top-headlines?' +
+          'country=tw&' +
+          'apiKey=' + process.env.NEWS_KEY;
+    var r = request.get(url, function (err, res, body) {
+      console.log(r.uri.href);
+      //console.log(res.request.uri.href);
+      var jsonObject = JSON.parse(body);
+      var sentence = ""
+      for(i=0;i<jsonObject.articles.length;i++){
+        sentence = ""
+        sentence = sentence +"撰文記者 or 來源： "+ jsonObject.articles[i].author+"\n"
+        sentence = sentence +"標題： "+ jsonObject.articles[i].title+"\n"
+        sentence = sentence +"發表時間： "+ jsonObject.articles[i].publishedAt+"\n"
+        message.channel.send(sentence)
+      }
+      
+    })
+  }
+});
+
 client.login(process.env.BOT_KEY);
