@@ -119,7 +119,7 @@ client.on("message", (message) => {
     message.channel.send(`${message.author}`+" 今日新聞懶人包：");
     var url = 'https://newsapi.org/v2/top-headlines?' +
           'country=tw&' +
-          'apiKey=c0027fd7de424a79af3ff8302bc5dc9c';
+          'apiKey=' + process.env.NEWS_KEY;
     var r = request.get(url, function (err, res, body) {
       console.log(r.uri.href);
       //console.log(res.request.uri.href);
@@ -137,4 +137,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login("NTk2NDA3MTI0NDIzMjEzMDkz.XR5F-A.-NoHyUmtda735qB-LXh4UgKbYPY");
+client.login(process.env.BOT_KEY);
