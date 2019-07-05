@@ -30,8 +30,6 @@ client.on("message", (message) => {
       console.log(r.uri.href);
       //console.log(res.request.uri.href);
       message.channel.send(r.uri.href)
-      const attachment = new Discord.Attachment(r.uri.href);
-      message.channel.send(attachment);
     })
   }
 });
