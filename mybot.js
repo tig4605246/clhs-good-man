@@ -26,7 +26,12 @@ client.on("message", (message) => {
 client.on("message", (message) => {
   if (message.content.startsWith("那個貓咪")||message.content.includes("Angel Lee")) {
     message.channel.send("閃電十一人，經典重溫");
-    message.channel.send("http://graph.facebook.com/100002006753147/picture?type=large")
+    var r = request.get("http://graph.facebook.com/100002006753147/picture?type=large", function (err, res, body) {
+      console.log(r.uri.href);
+      //console.log(res.request.uri.href);
+      message.channel.send(r.uri.href)
+    })
+    message.channel.send("謝謝大家")
   }
 });
 
