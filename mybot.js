@@ -24,6 +24,20 @@ client.on("message", (message) => {
 });
 
 client.on("message", (message) => {
+  if (message.content.startsWith("那個貓咪")||message.content.includes("Angel Lee")) {
+    message.channel.send("閃電十一人，經典重溫");
+    message.channel.send("https://www.facebook.com/profile.php?id=100002006753147")
+  }
+});
+
+client.on("message", (message) => {
+  if (message.content.startsWith("最可愛")||message.content.includes("水躍魚")) {
+    message.channel.send("不可質疑");
+    message.channel.send("https://www.facebook.com/profile.php?id=100003398141423&fref=search&__tn__=%2Cd%2CP-R&eid=ARD2m2gOIz5eQcoSzefaMeF0SvKgk-XJX94mjrVIj6dy87ljcE6MnZ3__RzCdOTJ_B7cIcaoRITWneHc")
+  }
+});
+
+client.on("message", (message) => {
     if (message.content.includes("POE")||message.content.includes("流亡黯道")) {
       message.channel.send("垃圾雞舍");
     }
